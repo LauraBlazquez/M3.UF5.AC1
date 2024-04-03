@@ -1,4 +1,6 @@
 ﻿
+using System.Text.RegularExpressions;
+
 namespace AC1
 {
     public class Program
@@ -39,13 +41,11 @@ namespace AC1
 
         public static bool ValidatePlayer(string player)
         {
-            foreach (char c in player)
+            Regex valid = new Regex(@"[a-z]",RegexOptions.IgnoreCase);
+            if (valid.IsMatch(player))
             {
-                if (!char.IsLetter(c))
-                {
-                    Console.WriteLine("Format de nom incorrecte, només pot contenir lletres, sense accents.\n");
-                    return false;
-                }
+                Console.WriteLine("Format de nom incorrecte, només pot contenir lletres, sense accents.\n");
+                return false;
             }
             return true;
         }

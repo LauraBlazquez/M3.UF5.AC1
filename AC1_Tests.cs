@@ -20,6 +20,13 @@ namespace AC1_Tests
         }
 
         [TestMethod]
+        public void ValidatePlayerAccentKO ()
+        {
+            string player = "Láura";
+            Assert.IsFalse (Program.ValidatePlayer (player));
+        }
+
+        [TestMethod]
         public void ValidateMissionSeparatorKO()
         {
             string mission = "ALFA,001";
