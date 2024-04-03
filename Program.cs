@@ -41,8 +41,8 @@ namespace AC1
 
         public static bool ValidatePlayer(string player)
         {
-            Regex valid = new Regex(@"[a-z]",RegexOptions.IgnoreCase);
-            if (valid.IsMatch(player))
+            Regex valid = new Regex("^[a-z]+$",RegexOptions.IgnoreCase);
+            if (!valid.IsMatch(player))
             {
                 Console.WriteLine("Format de nom incorrecte, només pot contenir lletres, sense accents.\n");
                 return false;
